@@ -1,7 +1,7 @@
 package entity;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -32,6 +32,5 @@ public class Publisher {
     private String address;
 
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
-    private Set<Book> books = new HashSet<>();
-
+    private List<Book> books = new ArrayList<>();
 }

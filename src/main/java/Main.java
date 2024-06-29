@@ -16,7 +16,7 @@ public class Main {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
 
-        try (entityManagerFactory; entityManager) {
+        try {
             transaction.begin();
 
             // Author 1: Douglas Noel Adams
@@ -103,23 +103,27 @@ public class Main {
                 transaction.rollback();
             }
             e.printStackTrace();
+        } finally {
+            if (entityManager.isOpen()) {
+                entityManager.close();
+            }
+            if (entityManagerFactory.isOpen()) {
+                entityManagerFactory.close();
+            }
         }
-
     }
 
-    private static void printBooks(Book foundSpaceOdyssey) {
-        System.out.println("Found book: " + foundSpaceOdyssey.getName());
-        System.out.println("Author: " + foundSpaceOdyssey.getAuthor().getName());
-        System.out.println("Publisher: " + foundSpaceOdyssey.getPublisher().getName());
+    private static void printBooks(Book foundBook) {
+        System.out.println("Found book: " + foundBook.getName());
+        System.out.println("Author: " + foundBook.getAuthor().getName());
+        System.out.println("Publisher: " + foundBook.getPublisher().getName());
 
-        foundSpaceOdyssey.getCategories().forEach(category -> System.out.print(
-                category.getName() + ", "));
-        System.out.println("Borrowings: " + foundSpaceOdyssey.getBorrowings().size());
+        foundBook.getCategories().forEach(category -> System.out.print(category.getName() + ", "));
+        System.out.println("Borrowings: " + foundBook.getBorrowings().size());
 
         System.out.println("Borrowings details:");
-        for (BookBorrowing b : foundSpaceOdyssey.getBorrowings()) {
-            System.out.println(
-                    "  Borrower: " + b.getBorrowerName() + ", Date: " + b.getBorrowingDate());
+        for (BookBorrowing b : foundBook.getBorrowings()) {
+            System.out.println("  Borrower: " + b.getBorrowerName() + ", Date: " + b.getBorrowingDate());
         }
     }
 }
