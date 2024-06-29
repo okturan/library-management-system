@@ -1,6 +1,6 @@
 ### List of relations (obtained via shell command)
 ```bash
-export PGPASSWORD='postgres' && psql -h localhost -p 5432 -U postgres -d library-management-system -c "\dt public.*" -c "\d public.*"
+psql -h localhost -p 5432 -U postgres -d library-management-system -c "\dt public.*" -c "\d public.*"
 ```
 
 ```
