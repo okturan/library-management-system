@@ -32,7 +32,7 @@ Referenced by:
 
 ### Sequence "public.authors_id_seq"
 
-```genericsql
+```sql
   Type   | Start | Minimum |  Maximum   | Increment | Cycles? | Cache  
 ---------+-------+---------+------------+-----------+---------+-------  
  integer |     1 |       1 | 2147483647 |         1 | no      |     1  
@@ -41,7 +41,7 @@ Owned by: public.authors.id
 
 ### Index "public.authors_pkey"
 
-```genericsql
+```sql
  Column |  Type   | Key? | Definition  
 --------+---------+------+------------  
  id     | integer | yes  | id  
@@ -50,7 +50,7 @@ primary key, btree, for table "public.authors"
 
 ### Table "public.book_borrowings"
 
-```genericsql
+```sql
      Column     |          Type          | Collation | Nullable |                   Default                     
 ----------------+------------------------+-----------+----------+---------------------------------------------  
  book_id        | integer                |           |          |  
@@ -66,7 +66,7 @@ Foreign-key constraints:
 
 ### Sequence "public.book_borrowings_id_seq"
 
-```genericsql
+```sql
   Type   | Start | Minimum |  Maximum   | Increment | Cycles? | Cache  
 ---------+-------+---------+------------+-----------+---------+-------  
  integer |     1 |       1 | 2147483647 |         1 | no      |     1  
@@ -75,7 +75,7 @@ Owned by: public.book_borrowings.id
 
 ### Index "public.book_borrowings_pkey"
 
-```genericsql
+```sql
  Column |  Type   | Key? | Definition  
 --------+---------+------+------------  
  id     | integer | yes  | id  
@@ -84,7 +84,7 @@ primary key, btree, for table "public.book_borrowings"
 
 ### Table "public.book_categories"
 
-```genericsql
+```sql
    Column    |  Type   | Collation | Nullable | Default  
 -------------+---------+-----------+----------+---------  
  book_id     | integer |           | not null |  
@@ -96,7 +96,7 @@ Foreign-key constraints:
 
 ### Table "public.books"
 
-```genericsql
+```sql
       Column      |          Type          | Collation | Nullable |              Default                       
 ------------------+------------------------+-----------+----------+-----------------------------------  
  author_id        | integer                |           |          |  
@@ -117,7 +117,7 @@ Referenced by:
 
 ### Sequence "public.books_id_seq"
 
-```genericsql
+```sql
   Type   | Start | Minimum |  Maximum   | Increment | Cycles? | Cache  
 ---------+-------+---------+------------+-----------+---------+-------  
  integer |     1 |       1 | 2147483647 |         1 | no      |     1  
@@ -126,7 +126,7 @@ Owned by: public.books.id
 
 ### Index "public.books_pkey"
 
-```genericsql
+```sql
  Column |  Type   | Key? | Definition  
 --------+---------+------+------------  
  id     | integer | yes  | id  
@@ -135,7 +135,7 @@ primary key, btree, for table "public.books"
 
 ### Table "public.categories"
 
-```genericsql
+```sql
    Column    |          Type          | Collation | Nullable |                Default                   
 -------------+------------------------+-----------+----------+----------------------------------------  
  id          | integer                |           | not null | nextval('categories_id_seq'::regclass)  
@@ -149,7 +149,7 @@ Referenced by:
 
 ### Sequence "public.categories_id_seq"
 
-```genericsql
+```sql
   Type   | Start | Minimum |  Maximum   | Increment | Cycles? | Cache  
 ---------+-------+---------+------------+-----------+---------+-------  
  integer |     1 |       1 | 2147483647 |         1 | no      |     1  
@@ -158,7 +158,7 @@ Owned by: public.categories.id
 
 ### Index "public.categories_pkey"
 
-```genericsql
+```sql
  Column |  Type   | Key? | Definition  
 --------+---------+------+------------  
  id     | integer | yes  | id  
@@ -167,7 +167,7 @@ primary key, btree, for table "public.categories"
 
 ### Table "public.publishers"
 
-```genericsql
+```sql
        Column       |          Type          | Collation | Nullable |                Default                 
 --------------------+------------------------+-----------+----------+----------------------------------------  
  establishment_year | integer                |           |          |  
@@ -182,7 +182,7 @@ Referenced by:
 
 ### Sequence "public.publishers_id_seq"
 
-```genericsql
+```sql
   Type   | Start | Minimum |  Maximum   | Increment | Cycles? | Cache  
 ---------+-------+---------+------------+-----------+---------+-------  
  integer |     1 |       1 | 2147483647 |         1 | no      |     1  
@@ -191,7 +191,7 @@ Owned by: public.publishers.id
 
 ### Index "public.publishers_pkey"
 
-```genericsql
+```sql
  Column |  Type   | Key? | Definition  
 --------+---------+------+------------  
  id     | integer | yes  | id  
