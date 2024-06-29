@@ -3,7 +3,7 @@
 psql -h localhost -p 5432 -U postgres -d library-management-system -c "\dt public.*" -c "\d public.*"
 ```
 
-```
+```sql
  Schema |      Name       | Type  |  Owner  
 --------+-----------------+-------+----------  
  public | authors         | table | postgres  
