@@ -17,7 +17,7 @@ psql -h localhost -p 5432 -U postgres -d library-management-system -c "\dt publi
 
 ### Table "public.authors"
 
-```genericsql
+```sql
    Column   |          Type          | Collation | Nullable |               Default               
 ------------+------------------------+-----------+----------+-------------------------------------  
  birth_date | integer                |           |          |  
